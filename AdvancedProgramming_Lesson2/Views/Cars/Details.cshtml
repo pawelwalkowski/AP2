@@ -1,0 +1,44 @@
+﻿@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Program> Localizer
+@model AdvancedProgramming_Lesson2.Models.Car
+
+@{ ViewData["Title"] = "Details"; }
+
+<h1>@Localizer["Details"]</h1>
+
+<div>
+    <h4>@Localizer["Car"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Localizer["Model"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["ProductionDate"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["Type"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Localizer["Price"]
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+      
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">@Localizer["Edit"]</a> |
+    <a asp-action="Index">@Localizer["Back"]</a>
+</div>
